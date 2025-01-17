@@ -1,0 +1,8 @@
+@use "../abstract/mixins";
+@use "../abstract/variable" as v;
+@use "../base/font";
+
+body {
+    background-color: #00487C;
+    background-image: url("https://www.transparenttextures.com/patterns/subtle-grey.png");
+}

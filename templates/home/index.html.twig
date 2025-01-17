@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block main %}
+    {% for canard in canards %}
+        <h2>Nom : {{ canard.nom }}</h2>
+        <img src="{{asset('images/'~ canard.imageName)}}" alt="{{canard.imageName}}">
+        <p> {{canard.description|slice(0, 30)~'...'}} </p>
+        <p>Created by : {{canard.user.email}}</p>
+    {% endfor %}
+{% endblock %}

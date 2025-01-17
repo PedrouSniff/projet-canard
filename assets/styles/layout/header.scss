@@ -1,0 +1,21 @@
+@use "../abstract/mixins";
+@use "../abstract/variable" as v;
+@use "../base/font";
+
+// HEADER
+
+#header {
+    background-color: v.$secondarycolor;
+    nav {
+        @include mixins.flex($justify: space-between);
+        
+        img {
+            background-color: v.$secondarycolor;
+            color: v.$secondarycolor;
+        }
+
+        ul {
+            
+        }
+    }
+}
