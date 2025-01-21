@@ -3,8 +3,17 @@
 {% block title %}{% endblock %}
 
 {% block main %}
-    <h2>Nom : {{ canard.nom }}</h2>
-    <img src="{{asset('images/'~ canard.imageName)}}" alt="{{canard.imageName}}">
-    <p> {{canard.description}} </p>
-    <p>Created by : {{canard.user.email}}</p>
+    <section id="details">
+        <div class="canardCarte">
+            <div class="texteCanard">
+            <img src="{{ asset('images/' ~ canard.imageName) }}" alt="{{ canard.imageName }}">
+                <div class="canardInfo">
+                    <h3>Nom : {{ canard.nom }}</h2>
+                    <p>{{ canard.description}}</p>
+                    <p>Created by : {{ canard.user.email }}</p>
+                    <p>{{canard.value ~ '€'}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

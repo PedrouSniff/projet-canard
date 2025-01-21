@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 final class ModifierController extends AbstractController
 {
-    #[Route('/modifier/canard{id}', name: 'app_modifier')]
+    #[Route('/modifier/canard/{id}', name: 'app_modifier')]
     public function modifier(Canard $canard, Request $request, EntityManagerInterface $entityManager): Response
     {
         // Création du formulaire en indiquant l'objet sur lequel le formulaire va travailler

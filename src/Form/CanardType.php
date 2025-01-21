@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 
 class CanardType extends AbstractType
 {
@@ -26,11 +27,14 @@ class CanardType extends AbstractType
                             'image/jpeg',
                             'image/png',
                             'image/gif',
+                            'image/jpg',
                         ],
                         'mimeTypesMessage' => 'Veuillez uploader une image valide (JPEG, PNG, GIF).',
                     ]),
                 ],
-            ]);
+            ])
+
+            ->add('value', NumberType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

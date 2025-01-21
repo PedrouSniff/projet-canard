@@ -11,7 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 final class SupprimerController extends AbstractController
 {
-    #[Route('/supprimer/canard{id}', name: 'app_supprimer')]
+    #[Route('/supprimer/canard/{id}', name: 'app_supprimer')]
     public function supprimer(Canard $canard, Request $request, EntityManagerInterface $entityManager): Response
     {
 
