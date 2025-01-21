@@ -3,6 +3,10 @@
 @use "../base/font";
 
 body {
-    background-color: #00487C;
-    background-image: url("https://www.transparenttextures.com/patterns/subtle-grey.png");
+    background-color: #00487c;
+    background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
+}
+
+.active {
+    border-bottom: solid v.$accentcolor 3px;
 }

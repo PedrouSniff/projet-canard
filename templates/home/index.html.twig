@@ -3,10 +3,21 @@
 {% block title %}Accueil{% endblock %}
 
 {% block main %}
-    {% for canard in canards %}
-        <h2>Nom : {{ canard.nom }}</h2>
-        <img src="{{asset('images/'~ canard.imageName)}}" alt="{{canard.imageName}}">
-        <p> {{canard.description|slice(0, 30)~'...'}} </p>
-        <p>Created by : {{canard.user.email}}</p>
-    {% endfor %}
+    <div class="titre">
+        <h2>Nouveautés</h2>
+    </div>
+    <section id="presentationAccueil">
+        {% for canard in canards %}
+        <div class="canardCarte">
+            <a href="{{ path('app_details', {'id': canard.id }) }}">
+                <img src="{{ asset('images/' ~ canard.imageName) }}" alt="{{ canard.imageName }}">
+                <div class="canardInfo">
+                    <h3>Nom : {{ canard.nom }}</h2>
+                    <p>{{ canard.description|slice(0, 30) ~ '...' }}</p>
+                    <p>Created by : {{ canard.user.email }}</p>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </section>
 {% endblock %}

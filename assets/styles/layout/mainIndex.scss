@@ -2,3 +2,60 @@
 @use "../abstract/variable" as v;
 @use "../base/font";
 
+.titre {
+    @include mixins.flex;
+    margin-top: 3rem;
+    color: white;
+}
+
+#presentationAccueil {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-top: 5rem;
+
+    .canardCarte {
+        border: 3px solid v.$accentcolor;
+        border-radius: 0.5rem; 
+        width: 15rem; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+        transition: transform 0.2s, box-shadow 0.2s;
+
+        &:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            height: 100%;
+            padding: 1rem;
+
+            img {
+                width: 100%;
+                margin-bottom: 0.5rem;
+                object-fit: cover;
+                border-bottom: 3px solid v.$accentcolor;
+            }
+
+            .canardInfo {
+                text-align: center;
+                gap: 0.5rem;
+
+                h {
+                    font-size: 20px;
+                    margin: 0.5rem 0;
+                }
+
+                p {
+                    font-size: 15px;
+                    margin-top: 0.5rem;
+                }
+            }
+        }
+    }
+}

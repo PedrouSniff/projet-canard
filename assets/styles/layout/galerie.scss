@@ -1,0 +1,125 @@
+@use "../abstract/mixins";
+@use "../abstract/variable" as v;
+@use "../base/font";
+
+#presentationGalerie {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+
+
+    .canardCarte {
+        border: 3px solid v.$accentcolor;
+        border-radius: 0.5rem; 
+        width: 15rem; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-top: 5rem;
+
+        .boutons {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 0.5rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+
+            .modifier,#delete {
+                background-color: v.$accentcolor;
+                color: white;
+                padding: 0.5rem 1rem;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                font-size: 15px;
+                text-align: center;
+                @include mixins.hover($hcolor: black)
+            }
+        }
+
+        &:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .canard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            height: 100%;
+            padding: 1rem;
+
+            img {
+                width: 100%;
+                margin-bottom: 0.5rem;
+                object-fit: cover;
+                border-bottom: 3px solid v.$accentcolor;
+            }
+
+            .canardInfo {
+                text-align: center;
+                gap: 0.5rem;
+
+                h {
+                    font-size: 20px;
+                    margin: 0.5rem 0;
+                }
+
+                p {
+                    font-size: 15px;
+                    margin-top: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+#formulaire {
+    @include mixins.flex($direction: column);
+    margin-top: 7rem;
+    align-items: center;
+
+    .form {
+        @include mixins.flex($direction: column);
+        background-color: v.$secondarycolor;
+        border: 2px solid v.$accentcolor;
+        border-radius: 10px;
+        padding: 2rem;
+        max-width: 30rem;
+        width: 100%;
+        color: black;
+
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        form {
+            @include mixins.flex($direction: column);
+
+            input,select,textarea {
+                width: 100%;
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border: 1px solid v.$accentcolor;
+                border-radius: 5px;
+                background-color: white;
+            }
+
+            button {
+                background-color: v.$accentcolor;
+                color: white;
+                padding: 0.5rem;
+                border: none;
+                border-radius: 5px;
+                font-size: 1rem;
+                cursor: pointer;
+                @include mixins.hover($hcolor:black)
+            }
+        }
+    }
+}

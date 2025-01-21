@@ -2,7 +2,7 @@
 
 {% block title %}{% endblock %}
 
-{% block main %}$
+{% block main %}
     <h2>Nom : {{ canard.nom }}</h2>
     <img src="{{asset('images/'~ canard.imageName)}}" alt="{{canard.imageName}}">
     <p> {{canard.description}} </p>

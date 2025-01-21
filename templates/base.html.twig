@@ -11,19 +11,22 @@
         {% block header %}
             <header id="header">
                 <nav>
-                <img src={{asset('images/canard_logo.png')}} alt="">
-                    <ul>
+                <a href="{{path('app_home')}}"><img src={{asset('images/canardlogoCropped.png')}} alt=""></a>
+                    <ul class="nav1">
                         <li><a class="{% if app.request.attributes.get('_route') == 'app_home' %} active {% endif %}" href={{ path('app_home')}}>Accueil</a></li>
                         <li><a class="{% if app.request.attributes.get('_route') == 'app_galerie' %} active {% endif %}" href={{ path('app_galerie')}}>Galerie</a></li>
                         <li><a href="">Contact</a></li>
                     </ul>
-                    <div>
+                    <div class="nav2">
                         <ul>
                             {% if app.user == null %}
                                 <li><a class="{% if app.request.attributes.get('_route') == 'app_inscription' %} active {% endif %}" href={{ path('app_inscription')}}>inscription</a></li>
                                 <li><a class="{% if app.request.attributes.get('_route') == 'app_login' %} active {% endif %}" href={{ path('app_login')}}>connexion</a></li>
                             {% endif %}
+
+                            {% if is_granted('ROLE_USER') %}
                             <li><a class="{% if app.request.attributes.get('_route') == 'app_logout' %} active {% endif %}" href={{ path('app_logout')}}>déconnexion</a></li>
+                            {% endif %}
                         </ul>
                     </div>
                 </nav>

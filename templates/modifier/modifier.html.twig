@@ -3,12 +3,14 @@
 {% block title %}Modifier{% endblock %}
 
 {% block main %}
-    <section>
-        <h1>Formulaire d'ajout de canard :</h1>
+    <section id="formulaire">
+        <div class="form">
+        <h1>Modifiez votre canard : </h1>
         {{form_start(canardform)}}
             {{form_widget(canardform)}}
             <button>Envoyer</button>
         {{form_end(canardform)}}
+        </div>
     </section>
 
 {% endblock %}
